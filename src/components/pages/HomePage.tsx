@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Image } from '@/components/ui/image';
 import { Button } from '@/components/ui/button';
-import { Sparkles, Shield, Award, Heart } from 'lucide-react';
+import { Sparkles, Shield, Award, Heart, Mail, Phone, MapPin } from 'lucide-react';
 
 export default function HomePage() {
   const [currentImageSet, setCurrentImageSet] = useState(0);
@@ -270,6 +270,57 @@ export default function HomePage() {
             <Button asChild variant="outline" size="lg" className="border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary">
               <Link to="/contact">Contact Us</Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Information Section */}
+      <section className="bg-primary py-16">
+        <div className="max-w-[100rem] mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-3xl md:text-4xl text-primary-foreground mb-4">
+              Get in Touch
+            </h2>
+            <p className="font-paragraph text-lg text-primary-foreground/90 max-w-2xl mx-auto">
+              Visit our store or contact us for personalized assistance with your jewelry needs
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-buttonbackground rounded-full mx-auto mb-6 flex items-center justify-center">
+                <Mail className="w-8 h-8 text-buttonforeground" />
+              </div>
+              <h3 className="font-heading text-xl text-primary-foreground mb-3">Email</h3>
+              <p className="font-paragraph text-primary-foreground/90">
+                <a href="mailto:manish16121976.ig@gmail.com" className="hover:text-buttonbackground transition-colors">
+                  manish16121976.ig@gmail.com
+                </a>
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-buttonbackground rounded-full mx-auto mb-6 flex items-center justify-center">
+                <Phone className="w-8 h-8 text-buttonforeground" />
+              </div>
+              <h3 className="font-heading text-xl text-primary-foreground mb-3">Phone</h3>
+              <p className="font-paragraph text-primary-foreground/90">
+                <a href="tel:+917739134542" className="hover:text-buttonbackground transition-colors">
+                  +91 7739134542
+                </a>
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-buttonbackground rounded-full mx-auto mb-6 flex items-center justify-center">
+                <MapPin className="w-8 h-8 text-buttonforeground" />
+              </div>
+              <h3 className="font-heading text-xl text-primary-foreground mb-3">Address</h3>
+              <p className="font-paragraph text-primary-foreground/90">
+                Ramnagri More, Ashiana Digha Road<br />
+                Patna - 800025
+              </p>
+            </div>
           </div>
         </div>
       </section>
