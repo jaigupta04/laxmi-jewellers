@@ -178,7 +178,7 @@ function Footer() {
           <div>
             <h4 className="font-heading text-lg mb-4">Contact</h4>
             <div className="space-y-2">
-              <p className="font-paragraph text-primary-foreground/80">Email: info@laxmijewellers.com</p>
+              <p className="font-paragraph text-primary-foreground/80">{"Email: m"}</p>
               <p className="font-paragraph text-primary-foreground/80">Phone: +91 98765 43210</p>
               <p className="font-paragraph text-primary-foreground/80">
                 Address: 123 Jewelry Street<br />
