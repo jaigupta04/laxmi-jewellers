@@ -178,20 +178,15 @@ function Footer() {
           <div>
             <h4 className="font-heading text-lg mb-4">Contact</h4>
             <div className="space-y-2">
-              <p className="font-paragraph text-primary-foreground/80">{"Email: m"}</p>
-              <p className="font-paragraph text-primary-foreground/80">Phone: +91 98765 43210</p>
-              <p className="font-paragraph text-primary-foreground/80">
-                Address: 123 Jewelry Street<br />
-                Mumbai, Maharashtra 400001
-              </p>
+
+              <p className="font-paragraph text-primary-foreground/80">{"Email: manish16121976.ig@gmail.com"}</p>
+              <p className="font-paragraph text-primary-foreground/80">{"Phone: +91 7739134542"}</p>
             </div>
           </div>
         </div>
 
         <div className="border-t border-primary-foreground/20 mt-12 pt-8 text-center">
-          <p className="font-paragraph text-primary-foreground/80">
-            © 2024 Laxmi Jewellers. All rights reserved. | Privacy Policy | Terms of Service
-          </p>
+          <p className="font-paragraph text-primary-foreground/80">{"© 2025 Laxmi Jewellers. All rights reserved. | Privacy Policy | Terms of Service"}</p>
         </div>
       </div>
     </footer>
