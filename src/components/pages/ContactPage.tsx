@@ -77,9 +77,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-heading text-xl text-foreground mb-2">Visit Our Showroom</h3>
                     <p className="font-paragraph text-foreground/80">
-                      123 Jewelry Street<br />
-                      Zaveri Bazaar, Mumbai<br />
-                      Maharashtra 400001, India
+                      Ramnagri More, Ashiana Digha Road<br />
+                      Patna - 800025
                     </p>
                   </div>
                 </div>
@@ -89,8 +88,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-heading text-xl text-foreground mb-2">Call Us</h3>
                     <p className="font-paragraph text-foreground/80">
-                      +91 98765 43210<br />
-                      +91 22 2345 6789
+                      +91 7739134542
                     </p>
                   </div>
                 </div>
@@ -100,8 +98,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-heading text-xl text-foreground mb-2">Email Us</h3>
                     <p className="font-paragraph text-foreground/80">
-                      info@laxmijewellers.com<br />
-                      support@laxmijewellers.com
+                      manish16121976.ig@gmail.com
                     </p>
                   </div>
                 </div>
@@ -293,7 +290,7 @@ export default function ContactPage() {
           <div className="text-center mb-12">
             <h2 className="font-heading text-4xl text-foreground mb-4">Find Us</h2>
             <p className="font-paragraph text-lg text-foreground/80">
-              Located in the heart of Mumbai's jewelry district
+              Located in Patna, Bihar
             </p>
           </div>
 
@@ -303,7 +300,7 @@ export default function ContactPage() {
                 <MapPin className="w-12 h-12 text-buttonbackground mx-auto mb-4" />
                 <p className="font-paragraph text-secondary-foreground">
                   Interactive map would be embedded here<br />
-                  123 Jewelry Street, Zaveri Bazaar, Mumbai
+                  Ramnagri More, Ashiana Digha Road, Patna - 800025
                 </p>
               </div>
             </div>
