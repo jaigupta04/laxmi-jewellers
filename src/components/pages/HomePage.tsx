@@ -67,7 +67,7 @@ export default function HomePage() {
               Discover the finest collection of handcrafted jewelry, where tradition meets contemporary design in perfect harmony.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90">
+              <Button asChild size="lg" className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90 border border-primary-foreground">
                 <Link to="/store">Explore Collection</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
