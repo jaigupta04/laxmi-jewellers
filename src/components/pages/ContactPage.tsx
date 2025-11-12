@@ -1,0 +1,315 @@
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { MapPin, Phone, Mail, Clock, CheckCircle } from 'lucide-react';
+
+export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Here you would typically send the data to your backend
+    console.log('Contact form submission:', formData);
+    setIsSubmitted(true);
+  };
+
+  if (isSubmitted) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="max-w-md mx-auto text-center px-6">
+          <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-6" />
+          <h1 className="font-heading text-3xl text-foreground mb-4">Message Sent!</h1>
+          <p className="font-paragraph text-foreground/80 mb-6">
+            Thank you for contacting us. We'll get back to you within 24 hours.
+          </p>
+          <Button onClick={() => setIsSubmitted(false)} className="bg-buttonbackground text-buttonforeground">
+            Send Another Message
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-primary py-20">
+        <div className="max-w-[100rem] mx-auto px-6">
+          <div className="text-center">
+            <h1 className="font-heading text-5xl md:text-7xl text-primary-foreground mb-6">
+              Contact Us
+            </h1>
+            <p className="font-paragraph text-xl text-primary-foreground/90 max-w-3xl mx-auto">
+              We're here to help you find the perfect piece or answer any questions you may have
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Information & Form */}
+      <section className="bg-background py-20">
+        <div className="max-w-[100rem] mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Contact Information */}
+            <div>
+              <h2 className="font-heading text-4xl text-foreground mb-8">Get in Touch</h2>
+              <p className="font-paragraph text-lg text-foreground/80 mb-8">
+                Visit our showroom, call us, or send us a message. Our jewelry experts are ready to assist you.
+              </p>
+
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <MapPin className="w-6 h-6 text-buttonbackground mt-1" />
+                  <div>
+                    <h3 className="font-heading text-xl text-foreground mb-2">Visit Our Showroom</h3>
+                    <p className="font-paragraph text-foreground/80">
+                      123 Jewelry Street<br />
+                      Zaveri Bazaar, Mumbai<br />
+                      Maharashtra 400001, India
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <Phone className="w-6 h-6 text-buttonbackground mt-1" />
+                  <div>
+                    <h3 className="font-heading text-xl text-foreground mb-2">Call Us</h3>
+                    <p className="font-paragraph text-foreground/80">
+                      +91 98765 43210<br />
+                      +91 22 2345 6789
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <Mail className="w-6 h-6 text-buttonbackground mt-1" />
+                  <div>
+                    <h3 className="font-heading text-xl text-foreground mb-2">Email Us</h3>
+                    <p className="font-paragraph text-foreground/80">
+                      info@laxmijewellers.com<br />
+                      support@laxmijewellers.com
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <Clock className="w-6 h-6 text-buttonbackground mt-1" />
+                  <div>
+                    <h3 className="font-heading text-xl text-foreground mb-2">Business Hours</h3>
+                    <p className="font-paragraph text-foreground/80">
+                      Monday - Saturday: 10:00 AM - 8:00 PM<br />
+                      Sunday: 11:00 AM - 6:00 PM
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <div>
+              <Card className="border-bordersubtle">
+                <CardHeader>
+                  <CardTitle className="font-heading text-2xl text-foreground">Send us a Message</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block font-paragraph text-foreground mb-2">Name *</label>
+                        <Input
+                          type="text"
+                          value={formData.name}
+                          onChange={(e) => handleInputChange('name', e.target.value)}
+                          required
+                          className="border-bordersubtle"
+                        />
+                      </div>
+                      <div>
+                        <label className="block font-paragraph text-foreground mb-2">Email *</label>
+                        <Input
+                          type="email"
+                          value={formData.email}
+                          onChange={(e) => handleInputChange('email', e.target.value)}
+                          required
+                          className="border-bordersubtle"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block font-paragraph text-foreground mb-2">Phone Number</label>
+                      <Input
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) => handleInputChange('phone', e.target.value)}
+                        className="border-bordersubtle"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block font-paragraph text-foreground mb-2">Subject *</label>
+                      <Select value={formData.subject} onValueChange={(value) => handleInputChange('subject', value)}>
+                        <SelectTrigger className="border-bordersubtle">
+                          <SelectValue placeholder="Select a subject" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="general-inquiry">General Inquiry</SelectItem>
+                          <SelectItem value="product-question">Product Question</SelectItem>
+                          <SelectItem value="custom-design">Custom Design</SelectItem>
+                          <SelectItem value="repair-service">Repair Service</SelectItem>
+                          <SelectItem value="warranty-claim">Warranty Claim</SelectItem>
+                          <SelectItem value="appointment">Schedule Appointment</SelectItem>
+                          <SelectItem value="feedback">Feedback</SelectItem>
+                          <SelectItem value="other">Other</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    <div>
+                      <label className="block font-paragraph text-foreground mb-2">Message *</label>
+                      <Textarea
+                        value={formData.message}
+                        onChange={(e) => handleInputChange('message', e.target.value)}
+                        placeholder="Tell us how we can help you..."
+                        required
+                        className="border-bordersubtle min-h-[120px]"
+                      />
+                    </div>
+
+                    <Button type="submit" size="lg" className="w-full bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90">
+                      Send Message
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="bg-secondary py-20">
+        <div className="max-w-[100rem] mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="font-heading text-4xl text-secondary-foreground mb-4">Our Services</h2>
+            <p className="font-paragraph text-lg text-secondary-foreground/80 max-w-3xl mx-auto">
+              Comprehensive jewelry services to meet all your needs
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="border-bordersubtle text-center">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-softaccent rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <span className="text-2xl">💎</span>
+                </div>
+                <h3 className="font-heading text-xl text-secondary-foreground mb-3">Custom Design</h3>
+                <p className="font-paragraph text-secondary-foreground/80">
+                  Create unique pieces tailored to your vision and preferences
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-bordersubtle text-center">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-softaccent rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <span className="text-2xl">🔧</span>
+                </div>
+                <h3 className="font-heading text-xl text-secondary-foreground mb-3">Repair & Maintenance</h3>
+                <p className="font-paragraph text-secondary-foreground/80">
+                  Professional repair and lifetime maintenance services
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-bordersubtle text-center">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-softaccent rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <span className="text-2xl">📜</span>
+                </div>
+                <h3 className="font-heading text-xl text-secondary-foreground mb-3">Certification</h3>
+                <p className="font-paragraph text-secondary-foreground/80">
+                  All diamonds come with international certification
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-bordersubtle text-center">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-softaccent rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <span className="text-2xl">🔄</span>
+                </div>
+                <h3 className="font-heading text-xl text-secondary-foreground mb-3">Buyback Guarantee</h3>
+                <p className="font-paragraph text-secondary-foreground/80">
+                  100% value protection on all your jewelry purchases
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-bordersubtle text-center">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-softaccent rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <span className="text-2xl">🚚</span>
+                </div>
+                <h3 className="font-heading text-xl text-secondary-foreground mb-3">Safe Shipping</h3>
+                <p className="font-paragraph text-secondary-foreground/80">
+                  Secure and insured delivery to your doorstep
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-bordersubtle text-center">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-softaccent rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <span className="text-2xl">🎁</span>
+                </div>
+                <h3 className="font-heading text-xl text-secondary-foreground mb-3">Gift Cards</h3>
+                <p className="font-paragraph text-secondary-foreground/80">
+                  Perfect for special occasions and celebrations
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="bg-background py-20">
+        <div className="max-w-[100rem] mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-4xl text-foreground mb-4">Find Us</h2>
+            <p className="font-paragraph text-lg text-foreground/80">
+              Located in the heart of Mumbai's jewelry district
+            </p>
+          </div>
+
+          <div className="bg-secondary rounded-lg p-8 text-center">
+            <div className="w-full h-64 bg-softaccent rounded-lg flex items-center justify-center">
+              <div className="text-center">
+                <MapPin className="w-12 h-12 text-buttonbackground mx-auto mb-4" />
+                <p className="font-paragraph text-secondary-foreground">
+                  Interactive map would be embedded here<br />
+                  123 Jewelry Street, Zaveri Bazaar, Mumbai
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
