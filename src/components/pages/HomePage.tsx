@@ -244,7 +244,7 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <Image
-                src="https://static.wixstatic.com/media/73b405_d107d299437f4126806ad70ecde4118f~mv2.png?originWidth=576&originHeight=384"
+                src="https://pin.it/afVH7IQsv"
                 alt="Skilled craftsman creating jewelry"
                 width={600}
                 className="w-full h-96 object-cover rounded-lg shadow-lg"
