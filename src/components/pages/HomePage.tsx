@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Image } from '@/components/ui/image';
 import { Button } from '@/components/ui/button';
 import { Sparkles, Shield, Award, Heart } from 'lucide-react';
+import { WhatsAppChatButton } from '@/components/ui/whatsapp-chat-button';
 
 export default function HomePage() {
   const [currentImageSet, setCurrentImageSet] = useState(0);
@@ -317,6 +318,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* WhatsApp Chat Button */}
+      <WhatsAppChatButton phoneNumber="917739134542" />
     </div>
   );
 }
