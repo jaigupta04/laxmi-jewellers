@@ -59,7 +59,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
       {/* Contact Information & Form */}
       <section className="bg-background py-20">
         <div className="max-w-[100rem] mx-auto px-6">
@@ -108,9 +107,9 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-heading text-xl text-foreground mb-2">Business Hours</h3>
                     <p className="font-paragraph text-foreground/80">
-                      Monday - Saturday: 10:00 AM - 8:00 PM<br />
-                      Sunday: 11:00 AM - 6:00 PM
-                    </p>
+                    Monday - Saturday: 10:00 AM - 8:00 PM<br />
+                    Sunday: 11:00 AM - 6:00 PM
+                  </p>
                   </div>
                 </div>
               </div>
@@ -197,7 +196,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
       {/* Services Section */}
       <section className="bg-secondary py-20">
         <div className="max-w-[100rem] mx-auto px-6">
@@ -283,7 +281,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
       {/* Map Section */}
       <section className="bg-background py-20">
         <div className="max-w-[100rem] mx-auto px-6">
