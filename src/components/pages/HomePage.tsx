@@ -150,6 +150,7 @@ export default function HomePage() {
                 width={120}
                 className="mx-auto mb-4"
               />
+              <div className="w-16 h-px bg-bordersubtle mx-auto"></div>
             </div>
             <div className="text-center">
               <Award className="w-12 h-12 text-buttonbackground mx-auto mb-4" />
