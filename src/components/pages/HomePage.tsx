@@ -147,7 +147,8 @@ export default function HomePage() {
               <Image
                 src="https://static.wixstatic.com/media/73b405_7e2ef32252684e1c8794503c67df53fa~mv2.jpg"
                 width={120}
-                className="mx-auto mb-4 border-4 border-yellow-500 rounded-lg shadow-lg"
+                className="mx-auto mb-4 border-4 rounded-lg shadow-lg"
+                style={{ borderColor: '#b87333' }}
                 originWidth={185}
                 originHeight={244} />
 
