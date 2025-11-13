@@ -61,7 +61,7 @@ export default function AboutPage() {
                 to create jewelry that celebrates life's most precious moments. What started as a modest 
                 workshop has grown into one of India's most trusted names in fine jewelry.
               </p>
-              <p className="font-paragraph text-lg text-foreground/80 mb-6">{"Our founder, Mr. Rajesh Sharm, believed that jewelry should be more than just an accessory—it should tell a story, capture emotions, and become a treasured heirloom passed down through generations. This philosophy continues to guide everything we do today."}</p>
+
               <p className="font-paragraph text-lg text-foreground/80">{"Our founder, Mr. Manish Kumar, believed that jewelry should be more than just an accessory—it should tell a story, capture emotions, and become a treasured heirloom passed down through generations. This philosophy continues to guide everything we do today."}</p>
             </div>
             <div className="relative">
@@ -194,6 +194,14 @@ export default function AboutPage() {
                 <Card key={testimonial._id} className="bg-secondary border-bordersubtle">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
+                      {testimonial.customerPhoto && (
+                        <Image
+                          src={testimonial.customerPhoto}
+                          alt={testimonial.customerName || 'Customer'}
+                          width={48}
+                          className="w-12 h-12 rounded-full object-cover mr-4"
+                        />
+                      )}
                       <div>
                         <h4 className="font-heading text-lg text-secondary-foreground">
                           {testimonial.customerName}
