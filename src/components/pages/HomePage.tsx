@@ -154,9 +154,16 @@ export default function HomePage() {
 
             </div>
             <div className="text-center">
-              <Award className="w-12 h-12 text-buttonbackground mx-auto mb-4 stroke-primary" />
-              <h3 className="font-heading text-xl text-secondary-foreground mb-2">Lifetime Maintenance</h3>
-              <p className="font-paragraph text-secondary-foreground/80">Complimentary cleaning and maintenance services</p>
+              <Image
+                src="https://static.wixstatic.com/media/73b405_9f09b7ec8b0b429d96176d9bdf429ad3~mv2.png"
+                alt="MSME Certified - Micro, Small & Medium Enterprises"
+                width={48}
+                className="mx-auto mb-4"
+                originWidth={300}
+                originHeight={300}
+              />
+              <h3 className="font-heading text-xl text-secondary-foreground mb-2">MSME Certified</h3>
+              <p className="font-paragraph text-secondary-foreground/80">Government recognized micro, small & medium enterprise</p>
             </div>
             <div className="text-center">
               <Sparkles className="w-12 h-12 text-buttonbackground mx-auto mb-4" />
