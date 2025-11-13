@@ -165,7 +165,14 @@ export default function HomePage() {
               <p className="font-paragraph text-secondary-foreground/80">Government recognized micro, small & medium enterprise</p>
             </div>
             <div className="text-center">
-              <Sparkles className="w-12 h-12 text-buttonbackground mx-auto mb-4" />
+              <Image
+                src="https://static.wixstatic.com/media/73b405_1c4909bd66ef47b8abfea87016c6ecf2~mv2.png"
+                alt="IGI Certified"
+                width={48}
+                height={48}
+                className="mx-auto mb-4"
+                originWidth={600}
+                originHeight={600} />
               <h3 className="font-heading text-xl text-secondary-foreground mb-2">Buyback Guarantee</h3>
               <p className="font-paragraph text-secondary-foreground/80">100% value protection on all purchases</p>
             </div>
