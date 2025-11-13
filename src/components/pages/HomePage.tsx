@@ -177,13 +177,13 @@ export default function HomePage() {
               <p className="font-paragraph text-secondary-foreground/80">{"Authentic diamonds with IGI certification guaranteed"}</p>
             </div>
             <div className="text-center">
-              <Image 
-                src="https://static.wixstatic.com/media/73b405_320d6b5bc9064dbdba79aabd75332ede~mv2.jpg"
-                alt="Custom designed gold jewelry set with intricate patterns"
+              <Image
+                src="https://static.wixstatic.com/media/73b405_6c34a20caf694d84a0a4d1e3813f97b0~mv2.jpg"
                 width={48}
                 height={48}
                 className="w-12 h-12 object-cover rounded-lg mx-auto mb-4"
-              />
+                originWidth={736}
+                originHeight={736} />
               <h3 className="font-heading text-xl text-secondary-foreground mb-2">Custom Design</h3>
               <p className="font-paragraph text-secondary-foreground/80">Personalized jewelry crafted to perfection</p>
             </div>
