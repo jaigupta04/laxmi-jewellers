@@ -174,7 +174,7 @@ export default function HomePage() {
                 originWidth={600}
                 originHeight={600} />
               <h3 className="font-heading text-xl text-secondary-foreground mb-2">IGI Certified Diamonds</h3>
-              <p className="font-paragraph text-secondary-foreground/80">100% value protection on all purchases</p>
+              <p className="font-paragraph text-secondary-foreground/80">Authentic diamonds with IGI certification guaranteeing quality and excellence</p>
             </div>
             <div className="text-center">
               <Heart className="w-12 h-12 text-buttonbackground mx-auto mb-4" />
