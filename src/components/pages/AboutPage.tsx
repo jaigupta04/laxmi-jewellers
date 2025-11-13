@@ -66,8 +66,8 @@ export default function AboutPage() {
             </div>
             <div className="relative">
               <Image
-                src="https://static.wixstatic.com/media/73b405_abaced70a9fd46579c67a998586920c1~mv2.png?originWidth=576&originHeight=384"
-                alt="Founder of Laxmi Jewellers in workshop"
+                src="https://static.wixstatic.com/media/73b405_8427721386ca4565bd67f9b77b8f9be3~mv2.jpg"
+                alt="Traditional jewelry collection with ornate necklace and earrings"
                 width={600}
                 className="w-full h-96 object-cover rounded-lg shadow-lg"
               />
