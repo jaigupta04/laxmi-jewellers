@@ -180,9 +180,9 @@ export default function HomePage() {
               <Image 
                 src="https://static.wixstatic.com/media/73b405_320d6b5bc9064dbdba79aabd75332ede~mv2.jpg"
                 alt="Custom designed gold jewelry set with intricate patterns"
-                width={96}
-                height={96}
-                className="w-24 h-24 object-cover rounded-lg mx-auto mb-4"
+                width={48}
+                height={48}
+                className="w-12 h-12 object-cover rounded-lg mx-auto mb-4"
               />
               <h3 className="font-heading text-xl text-secondary-foreground mb-2">Custom Design</h3>
               <p className="font-paragraph text-secondary-foreground/80">Personalized jewelry crafted to perfection</p>
