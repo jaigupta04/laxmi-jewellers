@@ -145,25 +145,21 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
               <Image
-                src="https://static.wixstatic.com/media/73b405_d830c238ef3b4a15997804c1138aa260~mv2.png?originWidth=128&originHeight=128"
-                alt="BIS HUID Hallmarked - Bureau of Indian Standards Hallmarking"
+                src="https://static.wixstatic.com/media/73b405_97178297ea1f44e18ab5902458f787cd~mv2.jpg"
                 width={48}
                 className="mx-auto mb-4"
-                originWidth={300}
-                originHeight={300}
-              />
+                originWidth={272}
+                originHeight={185} />
               <h3 className="font-heading text-xl text-secondary-foreground mb-2">BIS HUID Hallmarked</h3>
               <p className="font-paragraph text-secondary-foreground/80">Certified purity and quality assurance</p>
             </div>
             <div className="text-center">
               <Image
-                src="https://static.wixstatic.com/media/73b405_9f09b7ec8b0b429d96176d9bdf429ad3~mv2.png"
-                alt="MSME Certified - Micro, Small & Medium Enterprises"
+                src="https://static.wixstatic.com/media/73b405_6da50ff2bfa244dfb453b3c05e787f3a~mv2.webp"
                 width={48}
                 className="mx-auto mb-4"
-                originWidth={300}
-                originHeight={300}
-              />
+                originWidth={500}
+                originHeight={500} />
               <h3 className="font-heading text-xl text-secondary-foreground mb-2">MSME Certified</h3>
               <p className="font-paragraph text-secondary-foreground/80">Government recognized micro, small & medium enterprise</p>
             </div>
