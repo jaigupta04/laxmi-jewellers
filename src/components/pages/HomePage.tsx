@@ -148,13 +148,13 @@ export default function HomePage() {
                 src="https://static.wixstatic.com/media/73b405_7e2ef32252684e1c8794503c67df53fa~mv2.jpg"
                 width={120}
                 className="mx-auto mb-4 border-4 rounded-lg shadow-lg"
-                style={{ borderColor: '#b87333' }}
+                style={{ borderColor: '#3B4A3A' }}
                 originWidth={185}
                 originHeight={244} />
 
             </div>
             <div className="text-center">
-              <Award className="w-12 h-12 text-buttonbackground mx-auto mb-4" />
+              <Award className="w-12 h-12 text-buttonbackground mx-auto mb-4 stroke-primary" />
               <h3 className="font-heading text-xl text-secondary-foreground mb-2">Lifetime Maintenance</h3>
               <p className="font-paragraph text-secondary-foreground/80">Complimentary cleaning and maintenance services</p>
             </div>
