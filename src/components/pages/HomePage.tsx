@@ -147,6 +147,7 @@ export default function HomePage() {
               <Image
                 src="https://static.wixstatic.com/media/73b405_97178297ea1f44e18ab5902458f787cd~mv2.jpg"
                 width={48}
+                height={48}
                 className="mx-auto mb-4"
                 originWidth={272}
                 originHeight={185} />
