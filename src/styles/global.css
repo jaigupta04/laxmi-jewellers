@@ -3,3 +3,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Hide Wix branding badge */
+[data-wix-branding],
+[class*="wix-branding"],
+[class*="wix-badge"],
+[id*="wix-branding"],
+[id*="wix-badge"],
+.wix-branding,
+.wix-badge,
+div[style*="position: fixed"][style*="bottom"][style*="right"] img[src*="wix"],
+div[style*="position: fixed"][style*="bottom"][style*="right"] a[href*="wix"],
+div[style*="position: fixed"][style*="bottom"][style*="right"] span:contains("Wix"),
+div[style*="position: fixed"][style*="bottom"][style*="right"] div:contains("Built on Wix"),
+div[style*="position: fixed"][style*="bottom"][style*="right"] div:contains("Powered by Wix") {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
