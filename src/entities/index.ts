@@ -52,6 +52,35 @@ export interface FrequentlyAskedQuestions {
 
 
 /**
+ * Collection ID: goldsilverrates
+ * Interface for GoldandSilverRates
+ */
+export interface GoldandSilverRates {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType text */
+  city?: string;
+  /** @wixFieldType number */
+  gold24k?: number;
+  /** @wixFieldType number */
+  gold22k?: number;
+  /** @wixFieldType number */
+  gold18k?: number;
+  /** @wixFieldType number */
+  silverPerGram?: number;
+  /** @wixFieldType number */
+  silverPerKg?: number;
+  /** @wixFieldType datetime */
+  timestamp?: Date | string;
+  /** @wixFieldType text */
+  source?: string;
+  /** @wixFieldType boolean */
+  isActive?: boolean;
+}
+
+
+/**
  * Collection ID: jewelryproducts
  * Interface for JewelryProducts
  */
