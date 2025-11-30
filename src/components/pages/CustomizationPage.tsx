@@ -66,7 +66,6 @@ export default function CustomizationPage() {
           </div>
         </div>
       </section>
-
       {/* Process Section */}
       <section className="bg-background py-20">
         <div className="max-w-[100rem] mx-auto px-6">
@@ -120,7 +119,6 @@ export default function CustomizationPage() {
           </div>
         </div>
       </section>
-
       {/* Customization Form */}
       <section className="bg-secondary py-20">
         <div className="max-w-[100rem] mx-auto px-6">
@@ -194,7 +192,6 @@ export default function CustomizationPage() {
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="yellow-gold">Yellow Gold</SelectItem>
-                        <SelectItem value="white-gold">White Gold</SelectItem>
                         <SelectItem value="rose-gold">Rose Gold</SelectItem>
                         <SelectItem value="platinum">Platinum</SelectItem>
                         <SelectItem value="silver">Silver</SelectItem>
@@ -266,80 +263,11 @@ export default function CustomizationPage() {
                 </Button>
               </form>
             </div>
-
             {/* Gallery */}
-            <div>
-              <h3 className="font-heading text-3xl text-secondary-foreground mb-6">Custom Design Gallery</h3>
-              <p className="font-paragraph text-secondary-foreground/80 mb-8">
-                Explore some of our recent custom creations to inspire your own design
-              </p>
 
-              <div className="grid grid-cols-2 gap-4">
-                <Card className="border-bordersubtle">
-                  <CardContent className="p-0">
-                    <Image
-                      src="https://static.wixstatic.com/media/73b405_fd4fe7e46fb24ba9a41245bbb21186e0~mv2.png?originWidth=256&originHeight=192"
-                      alt="Custom engagement ring"
-                      width={300}
-                      className="w-full h-48 object-cover rounded-t-lg"
-                    />
-                    <div className="p-4">
-                      <h4 className="font-heading text-lg text-secondary-foreground">Custom Engagement Ring</h4>
-                      <p className="font-paragraph text-sm text-secondary-foreground/80">Vintage-inspired design with halo setting</p>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-bordersubtle">
-                  <CardContent className="p-0">
-                    <Image
-                      src="https://static.wixstatic.com/media/73b405_7499ac900ebe44359d94b11054b866d1~mv2.png?originWidth=256&originHeight=192"
-                      alt="Custom necklace"
-                      width={300}
-                      className="w-full h-48 object-cover rounded-t-lg"
-                    />
-                    <div className="p-4">
-                      <h4 className="font-heading text-lg text-secondary-foreground">Personalized Necklace</h4>
-                      <p className="font-paragraph text-sm text-secondary-foreground/80">Family birthstone pendant design</p>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-bordersubtle">
-                  <CardContent className="p-0">
-                    <Image
-                      src="https://static.wixstatic.com/media/73b405_2e15c1e40d5644dbb6746d4c4395f286~mv2.png?originWidth=256&originHeight=192"
-                      alt="Custom bracelet"
-                      width={300}
-                      className="w-full h-48 object-cover rounded-t-lg"
-                    />
-                    <div className="p-4">
-                      <h4 className="font-heading text-lg text-secondary-foreground">Custom Bracelet</h4>
-                      <p className="font-paragraph text-sm text-secondary-foreground/80">Engraved charm bracelet with diamonds</p>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-bordersubtle">
-                  <CardContent className="p-0">
-                    <Image
-                      src="https://static.wixstatic.com/media/73b405_911144ba2d104373a5f8ecfe03fb5976~mv2.png?originWidth=256&originHeight=192"
-                      alt="Custom earrings"
-                      width={300}
-                      className="w-full h-48 object-cover rounded-t-lg"
-                    />
-                    <div className="p-4">
-                      <h4 className="font-heading text-lg text-secondary-foreground">Designer Earrings</h4>
-                      <p className="font-paragraph text-sm text-secondary-foreground/80">Art deco inspired drop earrings</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
           </div>
         </div>
       </section>
-
       {/* Why Choose Custom */}
       <section className="bg-background py-20">
         <div className="max-w-[100rem] mx-auto px-6">
