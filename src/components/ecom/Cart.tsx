@@ -1,238 +1,172 @@
-import {
-  QuantityDecrement,
-  QuantityInput,
-  QuantityIncrement,
-  QuantityReset,
-} from '@/components/ui/components/quantity';
-import {
-  CartTotalsPrice,
-  CartTotalsDiscount,
-  CartTotalsShipping,
-  CartTotalsTax,
-  CartTotalsTotal,
-  CartSummary,
-  CartLineItems,
-  CartLineItemRepeater,
-  CartClear,
-  CartNotes,
-  CartCoupon,
-  CartCouponInput,
-  CartCouponTrigger,
-  CartCouponClear,
-  CartErrors,
-} from '@/components/ui/ecom/Cart';
-import {
-  LineItemImage,
-  LineItemTitle,
-  LineItemSelectedOptions,
-  LineItemSelectedOptionRepeater,
-  LineItemQuantity,
-} from '@/components/ui/ecom/LineItem';
-import { Label } from '@/components/ui/label';
-
-import { CommerceActionsCheckout } from '@/components/ui/ecom/Commerce';
-import {
-  SelectedOptionText,
-  SelectedOptionColor,
-} from '@/components/ui/ecom/SelectedOption';
-import { useNavigation } from '../NavigationContext';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { ShoppingCart, ArrowRight } from 'lucide-react';
 
 export default function CartContent() {
   return (
-    <>
-      {/* Header */}
-      <div className="text-center mb-12">
-        <h1 className="text-5xl font-bold text-content-primary mb-4">
-          Shopping Cart
-        </h1>
-        <CartSummary asChild>
-          {({ totalItems }, ref) => (
-            <p
-              ref={ref as React.Ref<HTMLParagraphElement>}
-              className="text-content-secondary text-xl"
-            >
-              {totalItems} {totalItems === 1 ? 'item' : 'items'} in your cart
-            </p>
-          )}
-        </CartSummary>
+    <div className="min-h-screen bg-gradient-to-br from-secondary via-background to-secondary flex items-center justify-center py-20">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          className="absolute top-20 right-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute bottom-20 left-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
+          animate={{
+            scale: [1.2, 1, 1.2],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
+        />
       </div>
 
-      {/* Cart with Items */}
-      <CartLineItems emptyState={emptyCartState}>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Cart Items */}
-          <div className="lg:col-span-2">
-            <div className="bg-surface-primary backdrop-blur-sm rounded-xl border border-surface-subtle p-6">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold text-content-primary">
-                  Cart Items
-                </h2>
-                <CartClear />
-              </div>
-
-              <div className="space-y-6">
-                <CartLineItemRepeater>
-                  <div className="flex gap-4 p-4 border border-brand-light rounded-lg">
-                    <LineItemImage />
-                    <div className="flex-1 space-y-2">
-                      <LineItemTitle />
-                      <LineItemSelectedOptions>
-                        <div className="flex flex-wrap gap-2">
-                          <LineItemSelectedOptionRepeater>
-                            <SelectedOptionText />
-                            <SelectedOptionColor />
-                          </LineItemSelectedOptionRepeater>
-                        </div>
-                      </LineItemSelectedOptions>
-
-                      {/* Quantity Controls */}
-                      <LineItemQuantity steps={1}>
-                        <div className="flex items-center gap-2 mt-3">
-                          <div className="flex items-center border border-brand-light rounded-lg">
-                            <QuantityDecrement />
-                            <QuantityInput disabled={true} />
-                            <QuantityIncrement />
-                          </div>
-                          <QuantityReset>Remove</QuantityReset>
-                        </div>
-                      </LineItemQuantity>
-                    </div>
-                  </div>
-                </CartLineItemRepeater>
-              </div>
-            </div>
-          </div>
-
-          {/* Order Summary */}
-          <div className="lg:col-span-1">
-            <div className="bg-surface-primary backdrop-blur-sm rounded-xl border border-surface-subtle p-6 sticky top-6">
-              <h2 className="text-2xl font-bold text-content-primary mb-6">
-                Order Summary
-              </h2>
-
-              {/* Order Notes */}
-              <div className="mb-6">
-                <CartNotes />
-              </div>
-
-              {/* Coupon Section */}
-              <>
-                <Label className="block text-sm font-medium text-content-primary mb-2">
-                  Coupon Code:
-                </Label>
-                <CartCoupon>
-                  <div className="space-y-2 mb-6">
-                    <CartCouponInput placeholder="Enter coupon code" />
-                    <CartCouponTrigger>Apply Coupon</CartCouponTrigger>
-                    <CartCouponClear>Remove</CartCouponClear>
-                  </div>
-                </CartCoupon>
-              </>
-
-              <div className="w-full space-y-4">
-                <div className="space-y-3">
-                  <div className="flex justify-between text-lg text-content-primary">
-                    <CartSummary asChild>
-                      {({ totalItems }) => (
-                        <span>
-                          Subtotal ({totalItems}{' '}
-                          {totalItems === 1 ? 'item' : 'items'})
-                        </span>
-                      )}
-                    </CartSummary>
-
-                    <CartTotalsPrice />
-                  </div>
-                  <CartTotalsDiscount label="Discount" />
-                  <CartTotalsShipping label="Shipping" />
-                  <CartTotalsTax label="Tax" />
-                </div>
-
-                <div className="border-t border-surface-interactive pt-4">
-                  <CartTotalsTotal label="Total" />
-                </div>
-                <CartErrors />
-
-                <CommerceActionsCheckout
-                  label="Proceed to Checkout"
-                  loadingState="Processing..."
-                />
-
-                <div className="text-center pt-4">
-                  <a
-                    href="/"
-                    className="text-brand-primary hover:text-brand-light font-medium transition-colors duration-200 flex items-center justify-center gap-2"
-                  >
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 19l-7-7 7-7"
-                      />
-                    </svg>
-                    Continue Shopping
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </CartLineItems>
-    </>
-  );
-}
-
-const emptyCartState = () => {
-  const Navigation = useNavigation();
-
-  return (
-    <div className="text-center py-16">
-      <div className="w-32 h-32 bg-surface-primary rounded-full flex items-center justify-center mx-auto mb-8">
-        <svg
-          className="w-16 h-16 text-content-muted"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={1.5}
-            d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6h9M7 13l-1.5 6m0 0h9m-9 0a1 1 0 100 2 1 1 0 000-2zm9 0a1 1 0 100 2 1 1 0 000-2z"
-          />
-        </svg>
-      </div>
-      <h2 className="text-3xl font-bold text-content-primary mb-4">
-        Your cart is empty
-      </h2>
-      <p className="text-content-light text-lg mb-8">
-        Start shopping to add items to your cart
-      </p>
-      <Navigation route="/">
-        <Button size="lg" className="p-6 text-md">
-          Continue Shopping
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+      {/* Main Content */}
+      <div className="max-w-[100rem] w-full px-6 relative z-10">
+        <div className="text-center">
+          {/* Coming Soon Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-full px-6 py-3 mb-8"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </Button>
-      </Navigation>
+            <ShoppingCart className="w-5 h-5 text-primary" />
+            <span className="font-paragraph text-primary font-semibold">Coming Soon</span>
+          </motion.div>
+
+          {/* Main Heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="font-heading text-5xl md:text-7xl lg:text-8xl text-foreground mb-6 leading-tight"
+          >
+            Cart Feature Coming Soon
+          </motion.h1>
+
+          {/* Subheading */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="font-paragraph text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto mb-8"
+          >
+            We're preparing an amazing shopping experience for you. Our cart feature will be available very soon!
+          </motion.p>
+
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="font-paragraph text-lg text-foreground/70 max-w-2xl mx-auto mb-12"
+          >
+            In the meantime, explore our custom design services or browse our resources to learn more about our exquisite jewelry collection.
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+          >
+            <Button
+              asChild
+              size="lg"
+              className="bg-primary text-primary-foreground hover:bg-primary/90"
+            >
+              <Link to="/customization" className="flex items-center gap-2">
+                Explore Custom Design
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+            >
+              <Link to="/">Back to Home</Link>
+            </Button>
+          </motion.div>
+
+          {/* Features Grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16"
+          >
+            <div className="bg-white/50 backdrop-blur-sm border border-primary/10 rounded-lg p-8">
+              <div className="text-4xl mb-4">🛒</div>
+              <h3 className="font-heading text-xl text-foreground mb-2">Easy Checkout</h3>
+              <p className="font-paragraph text-foreground/70">
+                Seamless cart management and secure checkout process
+              </p>
+            </div>
+
+            <div className="bg-white/50 backdrop-blur-sm border border-primary/10 rounded-lg p-8">
+              <div className="text-4xl mb-4">📦</div>
+              <h3 className="font-heading text-xl text-foreground mb-2">Fast Delivery</h3>
+              <p className="font-paragraph text-foreground/70">
+                Quick and reliable shipping with tracking information
+              </p>
+            </div>
+
+            <div className="bg-white/50 backdrop-blur-sm border border-primary/10 rounded-lg p-8">
+              <div className="text-4xl mb-4">💳</div>
+              <h3 className="font-heading text-xl text-foreground mb-2">Secure Payment</h3>
+              <p className="font-paragraph text-foreground/70">
+                Multiple payment options with complete security
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Additional Info */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-16 p-8 bg-primary/5 backdrop-blur-sm border border-primary/20 rounded-lg max-w-2xl mx-auto"
+          >
+            <h3 className="font-heading text-2xl text-foreground mb-4">What's Coming</h3>
+            <ul className="font-paragraph text-foreground/80 space-y-3 text-left">
+              <li className="flex items-start gap-3">
+                <span className="text-primary font-bold">✓</span>
+                <span>Browse and add items to your cart</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-primary font-bold">✓</span>
+                <span>Apply coupon codes and discounts</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-primary font-bold">✓</span>
+                <span>Review order summary before checkout</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-primary font-bold">✓</span>
+                <span>Multiple secure payment methods</span>
+              </li>
+            </ul>
+          </motion.div>
+        </div>
+      </div>
     </div>
   );
-};
+}
