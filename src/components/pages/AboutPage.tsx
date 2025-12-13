@@ -1,7 +1,9 @@
+'use client'
+
 import { useState, useEffect } from 'react';
-import { BaseCrudService } from '@/integrations';
+import { BaseCrudService } from '@/lib/mock-cms';
 import { Testimonials } from '@/entities';
-import { Image } from '@/components/ui/image';
+import { Image } from '@/components/ui/image-next';
 import { Card, CardContent } from '@/components/ui/card';
 import { Star, Award, Shield, Heart, Users } from 'lucide-react';
 

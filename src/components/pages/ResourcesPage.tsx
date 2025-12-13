@@ -1,11 +1,13 @@
+'use client'
+
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { BaseCrudService } from '@/integrations';
+import Link from 'next/link';
+import { BaseCrudService } from '@/lib/mock-cms';
 import { ProductGuides, FrequentlyAskedQuestions, EducationalContent } from '@/entities';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Image } from '@/components/ui/image';
+import { Image } from '@/components/ui/image-next';
 import { BookOpen, HelpCircle, GraduationCap, Calendar } from 'lucide-react';
 import { format } from 'date-fns';
 

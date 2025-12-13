@@ -14,28 +14,28 @@ function Header() {
       <div className="max-w-[100rem] mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="font-heading text-2xl text-foreground">
+          <Link href="/" className="font-heading text-2xl text-foreground">
             Laxmi Jewellers
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="font-paragraph text-foreground hover:text-buttonbackground transition-colors">
+            <Link href="/" className="font-paragraph text-foreground hover:text-buttonbackground transition-colors">
               Home
             </Link>
-            <Link to="/store" className="font-paragraph text-foreground hover:text-buttonbackground transition-colors">
+            <Link href="/store" className="font-paragraph text-foreground hover:text-buttonbackground transition-colors">
               Shop
             </Link>
-            <Link to="/customization" className="font-paragraph text-foreground hover:text-buttonbackground transition-colors">
+            <Link href="/customization" className="font-paragraph text-foreground hover:text-buttonbackground transition-colors">
               Custom Design
             </Link>
-            <Link to="/about" className="font-paragraph text-foreground hover:text-buttonbackground transition-colors">
+            <Link href="/about" className="font-paragraph text-foreground hover:text-buttonbackground transition-colors">
               About
             </Link>
-            <Link to="/resources" className="font-paragraph text-foreground hover:text-buttonbackground transition-colors">
+            <Link href="/resources" className="font-paragraph text-foreground hover:text-buttonbackground transition-colors">
               Resources
             </Link>
-            <Link to="/contact" className="font-paragraph text-foreground hover:text-buttonbackground transition-colors">
+            <Link href="/contact" className="font-paragraph text-foreground hover:text-buttonbackground transition-colors">
               Contact
             </Link>
           </nav>
@@ -51,7 +51,7 @@ function Header() {
               </Button>
             ) : (
               <div className="flex items-center space-x-2">
-                <Link to="/profile" className="font-paragraph text-foreground hover:text-buttonbackground transition-colors">
+                <Link href="/profile" className="font-paragraph text-foreground hover:text-buttonbackground transition-colors">
                   {member?.profile?.nickname || 'Profile'}
                 </Link>
                 <Button onClick={actions.logout} variant="outline" size="sm">
@@ -91,7 +91,7 @@ function Header() {
               >
                 Shop
               </Link>
-              <Link to="/customization" className="font-paragraph text-foreground hover:text-buttonbackground transition-colors"
+              <Link href="/customization" className="font-paragraph text-foreground hover:text-buttonbackground transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Custom Design
@@ -143,13 +143,13 @@ function Footer() {
           <div>
             <h4 className="font-heading text-lg mb-4">Quick Links</h4>
             <div className="space-y-2">
-              <Link to="/customization" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              <Link href="/customization" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 Custom Design
               </Link>
-              <Link to="/about" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              <Link href="/about" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 About Us
               </Link>
-              <Link to="/contact" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              <Link href="/contact" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 Contact
               </Link>
             </div>

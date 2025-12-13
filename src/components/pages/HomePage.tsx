@@ -1,7 +1,9 @@
+'use client'
+
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Image } from '@/components/ui/image';
+import { Image } from '@/components/ui/image-next';
 import { Button } from '@/components/ui/button';
 import { Sparkles, Shield, Award, Heart } from 'lucide-react';
 import { WhatsAppChatButton } from '@/components/ui/whatsapp-chat-button';
@@ -61,7 +63,7 @@ export default function HomePage() {
             <h1 className="font-heading text-6xl md:text-8xl text-primary-foreground mb-4">
               Timeless Elegance
             </h1>
-            <p className="font-heading text-2xl md:text-4xl text-primary-foreground italic mb-8">
+            <p className="font-heading italic text-2xl md:text-4xl text-primary-foreground mb-8">
               in Every Piece
             </p>
             <p className="font-paragraph text-lg text-primary-foreground/90 max-w-2xl mx-auto mb-12">
@@ -69,10 +71,10 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90 border border-primary-foreground">
-                <Link to="/customization">Custom Design</Link>
+                <Link href="/customization">Custom Design</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                <Link to="/contact">Contact Us</Link>
+                <Link href="/contact">Contact Us</Link>
               </Button>
             </div>
           </div>
@@ -285,7 +287,7 @@ export default function HomePage() {
                 of your unique style and personality.
               </p>
               <Button asChild size="lg" className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90">
-                <Link to="/about">Learn More</Link>
+                <Link href="/about">Learn More</Link>
               </Button>
             </div>
             <div className="relative">
@@ -310,10 +312,10 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90">
-              <Link to="/customization">Custom Design</Link>
+              <Link href="/customization">Custom Design</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary">
-              <Link to="/contact">Contact Us</Link>
+              <Link href="/contact">Contact Us</Link>
             </Button>
           </div>
         </div>

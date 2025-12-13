@@ -1,5 +1,7 @@
+'use client'
+
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Image } from '@/components/ui/image';
@@ -95,7 +97,7 @@ export default function StorePage() {
                 size="lg"
                 className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 border border-primary-foreground"
               >
-                <Link to="/customization" className="flex items-center gap-2">
+                <Link href="/customization" className="flex items-center gap-2">
                   Explore Custom Design
                   <ArrowRight className="w-5 h-5" />
                 </Link>
@@ -106,7 +108,7 @@ export default function StorePage() {
                 size="lg"
                 className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
               >
-                <Link to="/contact">Notify Me</Link>
+                <Link href="/contact">Notify Me</Link>
               </Button>
             </motion.div>
 
@@ -256,7 +258,7 @@ export default function StorePage() {
               size="lg"
               className="bg-primary-foreground text-primary hover:bg-primary-foreground/90"
             >
-              <Link to="/contact">Get in Touch</Link>
+              <Link href="/contact">Get in Touch</Link>
             </Button>
             <Button
               asChild
@@ -264,7 +266,7 @@ export default function StorePage() {
               size="lg"
               className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
             >
-              <Link to="/">Back to Home</Link>
+              <Link href="/">Back to Home</Link>
             </Button>
           </div>
         </div>

@@ -91,7 +91,7 @@ export default function CartContent() {
               size="lg"
               className="bg-primary text-primary-foreground hover:bg-primary/90"
             >
-              <Link to="/customization" className="flex items-center gap-2">
+              <Link href="/customization" className="flex items-center gap-2">
                 Explore Custom Design
                 <ArrowRight className="w-5 h-5" />
               </Link>
@@ -102,7 +102,7 @@ export default function CartContent() {
               size="lg"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
             >
-              <Link to="/">Back to Home</Link>
+              <Link href="/">Back to Home</Link>
             </Button>
           </motion.div>
 
