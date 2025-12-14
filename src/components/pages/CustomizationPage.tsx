@@ -21,17 +21,56 @@ export default function CustomizationPage() {
     description: '',
     inspiration: ''
   });
+  const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the data to your backend
-    console.log('Customization request:', formData);
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+    
+    try {
+      // Convert files to base64
+      const filesData = await Promise.all(
+        uploadedFiles.map(async (file) => {
+          const buffer = await file.arrayBuffer();
+          const base64 = Buffer.from(buffer).toString('base64');
+          return {
+            filename: file.name,
+            content: base64,
+            contentType: file.type,
+          };
+        })
+      );
+
+      const response = await fetch('/api/send-customization', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          files: filesData,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitted(true);
+      } else {
+        alert('Failed to submit request. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('An error occurred. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -252,16 +291,43 @@ export default function CustomizationPage() {
 
                 <div>
                   <label className="block font-paragraph text-secondary-foreground mb-2">Inspiration or Reference</label>
-                  <Textarea
-                    value={formData.inspiration}
-                    onChange={(e) => handleInputChange('inspiration', e.target.value)}
-                    placeholder="Share any inspiration sources, reference images, or existing pieces that inspire your design..."
-                    className="bg-background border-bordersubtle"
-                  />
+                  <div className="space-y-3">
+                    <Input
+                      type="file"
+                      accept="image/*,.pdf"
+                      multiple
+                      onChange={(e) => {
+                        const files = Array.from(e.target.files || []);
+                        setUploadedFiles(prev => [...prev, ...files]);
+                      }}
+                      className="bg-background border-bordersubtle"
+                    />
+                    {uploadedFiles.length > 0 && (
+                      <div className="space-y-2">
+                        <p className="text-sm font-paragraph text-secondary-foreground/70">
+                          {uploadedFiles.length} file(s) selected:
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {uploadedFiles.map((file, index) => (
+                            <div key={index} className="bg-background border border-bordersubtle rounded px-3 py-1 text-sm font-paragraph flex items-center gap-2">
+                              <span className="truncate max-w-[150px]">{file.name}</span>
+                              <button
+                                type="button"
+                                onClick={() => setUploadedFiles(prev => prev.filter((_, i) => i !== index))}
+                                className="text-destructive hover:text-destructive/80"
+                              >
+                                ×
+                              </button>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
 
-                <Button type="submit" size="lg" className="w-full bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90">
-                  Submit Customization Request
+                <Button type="submit" size="lg" className="w-full bg-buttonbackground text-buttonforeground hover:bg-buttonbackground/90" disabled={isSubmitting}>
+                  {isSubmitting ? 'Submitting...' : 'Submit Customization Request'}
                 </Button>
               </form>
             </div>
