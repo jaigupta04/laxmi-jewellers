@@ -158,9 +158,9 @@ function Footer() {
               <Link href="/about" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 About Us
               </Link>
-              <Link href="/resources" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              {/* <Link href="/resources" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 Resources
-              </Link>
+              </Link> */}
               <Link href="/contact" className="block font-paragraph text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 Contact
               </Link>
@@ -182,10 +182,8 @@ function Footer() {
           <div>
             <h4 className="font-heading text-lg mb-4">Hours</h4>
             <div className="space-y-2 font-paragraph text-primary-foreground/80">
-              <p>Monday - Saturday</p>
-              <p>10:00 AM - 8:00 PM</p>
-              <p className="mt-4">Sunday</p>
-              <p>Closed</p>
+              <p>Monday - Sunday</p>
+              <p>11:00 AM - 9:00 PM</p>
             </div>
           </div>
         </div>
