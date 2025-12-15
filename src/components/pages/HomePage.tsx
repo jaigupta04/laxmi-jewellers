@@ -77,9 +77,58 @@ export default function HomePage() {
                 <Link href="/contact">Contact Us</Link>
               </Button>
             </div>
+
+            {/* Mobile Carousel - Only visible on mobile/tablet */}
+            <div className="mt-12 lg:hidden">
+              <div className="relative overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentImageSet}
+                    initial={{ opacity: 0, x: 100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -100 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className="flex gap-4 justify-center px-4"
+                  >
+                    <div className="relative w-40 h-52 sm:w-48 sm:h-60 flex-shrink-0">
+                      <Image
+                        src={currentLeftImage.src}
+                        alt={currentLeftImage.alt}
+                        width={192}
+                        className="w-full h-full object-cover rounded-xl shadow-xl"
+                      />
+                    </div>
+                    <div className="relative w-40 h-52 sm:w-48 sm:h-60 flex-shrink-0">
+                      <Image
+                        src={currentRightImage.src}
+                        alt={currentRightImage.alt}
+                        width={192}
+                        className="w-full h-full object-cover rounded-xl shadow-xl"
+                      />
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+                
+                {/* Carousel Dots */}
+                <div className="flex justify-center gap-2 mt-4">
+                  {leftSideImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImageSet(index)}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        index === currentImageSet 
+                          ? 'bg-primary-foreground w-6' 
+                          : 'bg-primary-foreground/40'
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Elegant Left and Right Image Animation */}
+          {/* Elegant Left and Right Image Animation - Desktop Only */}
           <div className="absolute inset-0 hidden lg:block">
             {/* Left Side Image */}
             <div className="absolute left-12 top-1/2 -translate-y-1/2 w-72 h-96">

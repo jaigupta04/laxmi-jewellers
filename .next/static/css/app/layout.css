@@ -1357,6 +1357,9 @@ video {
 .h-px{
   height: 1px;
 }
+.h-52{
+  height: 13rem;
+}
 .max-h-\[--radix-context-menu-content-available-height\]{
   max-height: var(--radix-context-menu-content-available-height);
 }
@@ -1469,6 +1472,9 @@ video {
 .w-max{
   width: -moz-max-content;
   width: max-content;
+}
+.w-40{
+  width: 10rem;
 }
 .min-w-0{
   min-width: 0px;
@@ -2099,6 +2105,9 @@ video {
 .bg-yellow-100{
   --tw-bg-opacity: 1;
   background-color: rgb(254 249 195 / var(--tw-bg-opacity, 1));
+}
+.bg-primary-foreground\/40{
+  background-color: rgb(240 237 230 / 0.4);
 }
 .bg-gradient-to-bl{
   background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));
@@ -3345,12 +3354,20 @@ div[style*="position: fixed"][style*="bottom"][style*="right"] div:contains("Pow
     height: 6rem;
   }
 
+  .sm\:h-60{
+    height: 15rem;
+  }
+
   .sm\:w-12{
     width: 3rem;
   }
 
   .sm\:w-24{
     width: 6rem;
+  }
+
+  .sm\:w-48{
+    width: 12rem;
   }
 
   .sm\:max-w-sm{
