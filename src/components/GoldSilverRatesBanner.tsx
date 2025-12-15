@@ -56,15 +56,6 @@ export default function GoldSilverRatesBanner() {
     <div className="w-full bg-primary text-primary-foreground py-2.5 px-4 border-b border-primary-foreground/10">
       <div className="max-w-[100rem] mx-auto">
         <div className="flex items-center justify-between md:justify-center gap-4 md:gap-8 flex-wrap">
-          {/* Gold 22K */}
-          <div className="flex items-center gap-2">
-            <TrendingUp className="w-4 h-4 text-yellow-300" />
-            <div>
-              <div className="text-xs opacity-80">Gold 22K</div>
-              <div className="font-navbar font-semibold">₹{rates.gold22k?.toLocaleString('en-IN')}/10g</div>
-            </div>
-          </div>
-
           {/* Gold 24K */}
           <div className="flex items-center gap-2">
             <TrendingUp className="w-4 h-4 text-yellow-400" />
