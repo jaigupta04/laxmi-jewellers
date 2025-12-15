@@ -331,7 +331,75 @@ export default function CustomizationPage() {
                 </Button>
               </form>
             </div>
+            
             {/* Gallery */}
+            <div>
+              <h3 className="font-heading text-3xl text-secondary-foreground mb-6">Custom Design Gallery</h3>
+              <p className="font-paragraph text-lg text-secondary-foreground/80 mb-8">
+                Get inspired by some of our recent custom creations, each uniquely crafted for our valued clients.
+              </p>
+              
+              <div className="grid grid-cols-2 gap-4">
+                <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
+                  <Image
+                    src="https://static.wixstatic.com/media/73b405_4dc59fbd5bd7490eb371913e990b9390~mv2.jpg"
+                    alt="Custom gold necklace design"
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                    width={300}
+                    height={300}
+                  />
+                </div>
+                <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
+                  <Image
+                    src="https://static.wixstatic.com/media/73b405_42bddd0b86c64597be213e700b6d7fb9~mv2.jpg"
+                    alt="Custom diamond ring design"
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                    width={300}
+                    height={300}
+                  />
+                </div>
+                <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
+                  <Image
+                    src="https://static.wixstatic.com/media/73b405_6753a1e586b84636b896dc8490e2d674~mv2.jpg"
+                    alt="Custom bracelet design"
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                    width={300}
+                    height={300}
+                  />
+                </div>
+                <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
+                  <Image
+                    src="https://static.wixstatic.com/media/73b405_83e2a6698f8245938b5445f356cbe66c~mv2.jpg"
+                    alt="Custom earrings design"
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                    width={300}
+                    height={300}
+                  />
+                </div>
+              </div>
+
+              <div className="mt-8 bg-background rounded-lg p-6">
+                <h4 className="font-heading text-xl text-foreground mb-4">What to Expect</h4>
+                <ul className="space-y-3 font-paragraph text-foreground/80">
+                  <li className="flex items-start">
+                    <span className="text-buttonbackground mr-2">•</span>
+                    <span>Initial consultation within 24 hours</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-buttonbackground mr-2">•</span>
+                    <span>3D design renders for your approval</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-buttonbackground mr-2">•</span>
+                    <span>Expert craftsmanship with premium materials</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-buttonbackground mr-2">•</span>
+                    <span>Complete certification and lifetime warranty</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
 
           </div>
         </div>
